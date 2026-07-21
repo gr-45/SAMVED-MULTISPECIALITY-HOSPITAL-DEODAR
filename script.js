@@ -38,3 +38,13 @@ appointmentForm?.addEventListener('submit', event => {
 document.querySelectorAll('.slide-btn').forEach(button => button.addEventListener('click', () => {
   document.querySelector('.doctor-grid').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }));
+
+const lightbox = document.querySelector('.gallery-lightbox');
+const lightboxImage = lightbox?.querySelector('img');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+let galleryTrigger;
+const closeLightbox = () => { if (!lightbox) return; lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden', 'true'); document.body.classList.remove('lightbox-open'); galleryTrigger?.focus(); };
+document.querySelectorAll('.gallery-item').forEach(item => item.addEventListener('click', () => { if (!lightbox || !lightboxImage) return; galleryTrigger = item; lightboxImage.src = item.dataset.galleryImage; lightboxImage.alt = item.dataset.galleryAlt; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden', 'false'); document.body.classList.add('lightbox-open'); lightboxClose?.focus(); }));
+lightboxClose?.addEventListener('click', closeLightbox);
+lightbox?.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && lightbox?.classList.contains('open')) closeLightbox(); });
