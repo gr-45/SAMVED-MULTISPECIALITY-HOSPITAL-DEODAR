@@ -47,3 +47,15 @@
   object-fit: contain;
   object-position: center;
 }
+.youtube-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ff0000;
+}
+
+.youtube-link:hover {
+  opacity: 0.8;
+}
