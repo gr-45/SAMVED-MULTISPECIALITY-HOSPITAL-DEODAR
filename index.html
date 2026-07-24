@@ -1,93 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; object-src 'none'; upgrade-insecure-requests" />
   <meta name="description" content="Samved Multispeciality Hospital — compassionate, advanced care for every family." />
   <title>Samved Multispeciality Hospital | Care that feels personal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>.doctor-grid-two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:780px}.doctor-card{background:#fff}.doctor-info{padding:19px 20px 20px;border:1px solid #dce9ed;border-top:0}.doctor-card .qualification{min-height:38px;line-height:1.45}.doctor-phone{display:inline-block;margin-top:14px;color:#0b5278;font-size:13px;font-weight:700}.doctor-phone:hover{text-decoration:underline}.hero-photo img,.doctor-photo img{display:block;width:100%;height:100%;object-fit:cover}.hero-photo img{object-position:50% 22%}.doctor-photo img{object-position:center 18%}.map-card{height:auto!important;background:none!important;overflow:visible!important}.map-card:before,.map-card:after,.map-card .map-pin,.map-card .map-roads,.map-card .map-label{display:none}.map-frame{height:350px;border-radius:5px;overflow:hidden;box-shadow:0 8px 24px #0b52781c}.map-frame iframe{display:block;width:100%;height:100%;border:0}.map-link{margin-top:14px}@media(max-width:560px){.doctor-grid-two{grid-template-columns:1fr}.hero-photo img{object-position:50% 18%}.map-frame{height:290px}}</style>
+  <style>
+    footer { background: #071e2c; color: #d5e6ed; }
+    footer .footer-logo { background: #ffffff; }
+    .gallery-grid { display: block; column-width: 220px; column-gap: 16px; }
+    .gallery-item,
+    .gallery-item.gallery-item-large,
+    .gallery-item.gallery-item-wide { display: block; width: 100%; height: auto; min-height: 0; margin: 0 0 16px; break-inside: avoid; background: #f7fafb; }
+    .gallery-item img { display: block; width: 100%; height: auto; object-fit: contain; object-position: center; }
+    .doctor-grid-two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 780px
+    }
+
+    .doctor-card {
+      background: #fff
+    }
+
+    .doctor-info {
+      padding: 19px 20px 20px;
+      border: 1px solid #dce9ed;
+      border-top: 0
+    }
+
+    .doctor-card .qualification {
+      min-height: 38px;
+      line-height: 1.45
+    }
+
+    .doctor-phone {
+      display: inline-block;
+      margin-top: 14px;
+      color: #0b5278;
+      font-size: 13px;
+      font-weight: 700
+    }
+
+    .doctor-phone:hover {
+      text-decoration: underline
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .hero-photo img {
+      object-position: 50% 22%
+    }
+
+    .doctor-photo {
+      height: 365px;
+      display: grid;
+      place-items: center;
+      background: #f7fafb
+    }
+
+    .doctor-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center
+    }
+
+    .map-card {
+      height: auto !important;
+      background: none !important;
+      overflow: visible !important
+    }
+
+    .map-card:before,
+    .map-card:after,
+    .map-card .map-pin,
+    .map-card .map-roads,
+    .map-card .map-label {
+      display: none
+    }
+
+    .map-frame {
+      height: 350px;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px #0b52781c
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0
+    }
+
+    .map-link {
+      margin-top: 14px
+    }
+
+    @media(max-width:560px) {
+      html,
+      body { overflow-x: hidden; }
+
+      .container { width: min(100% - 30px, 1140px); }
+
+      .doctor-grid-two {
+        grid-template-columns: 1fr
+      }
+
+      .doctor-photo { height: 390px; }
+
+      .gallery-grid { column-width: 150px; column-gap: 11px; }
+      .gallery-item,
+      .gallery-item.gallery-item-large,
+      .gallery-item.gallery-item-wide { margin-bottom: 11px; }
+
+      .hero-photo img {
+        object-position: 50% 18%
+      }
+
+      .map-frame {
+        height: 290px
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="topbar"><div class="container topbar-inner"><span>Emergency Care</span><a href="tel:7490064900">Emergency: 74900 64900</a></div></div>
+  <div class="topbar">
+    <div class="container topbar-inner"><span>Emergency Care</span><a href="tel:7490064900">74900 64900</a>
+    </div>
+  </div>
   <header class="site-header" id="home">
     <div class="container nav-wrap">
       <a href="#home" class="brand brand-logo"><img src="./logo.png" alt="Samved Multispeciality Hospital" /></a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <nav class="main-nav"><a class="active" href="#home">Home</a><a href="#about">About Us</a><a href="#departments">Departments</a><a href="#doctors">Doctors</a><a href="#gallery">Photo Gallery</a><a href="#social-media">Social Media</a><a href="#contact">Contact</a><a class="nav-cta" href="#appointment">Book Appointment</a></nav>
+      <button class="menu-toggle" aria-label="Open navigation"
+        aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav"><a class="active" href="#home">Home</a><a href="#about">About Us</a><a
+          href="#departments">Departments</a><a href="#doctors">Doctors</a><a href="#contact">Contact</a><a href="#gallery">Photo Gallery</a><a
+          href="#social-media">Social Media</a><a class="nav-cta" href="#appointment">Book
+          Appointment</a></nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-shape shape-one"></div><div class="hero-shape shape-two"></div>
+      <div class="hero-shape shape-one"></div>
+      <div class="hero-shape shape-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> Your health, our priority</p>
-          <h1>Exceptional care for <em>every</em> life.</h1>
-          <p class="hero-text">A place where advanced medicine meets genuine compassion. Our specialists are here to guide you towards a healthier tomorrow.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#appointment">Book an appointment <b>→</b></a><a class="btn btn-ghost" href="#departments">Explore specialties</a></div>
+          <p class="eyebrow"><span></span> SAMVED MULTISPECIALITY HOSPITAL</p>
+          <h1>
+            Trusted Care,<br>
+            <em>Every Step of the Way.</em>
+          </h1>
+          <p class="hero-quote">
+            स्वस्थस्य स्वास्थ्य रक्षणम्।<br>
+            आतुरस्य विकार प्रशमनम्॥
+          </p>
+
+          <p class="hero-source">
+            — चरक संहिता
+          </p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#appointment">Book Appointment <b>→</b></a><a
+              class="btn btn-ghost" href="#departments">Explore specialties</a></div>
         </div>
         <div class="hero-visual reveal">
-          <div class="hero-photo"><img src="./dr-naresh-13.JPG" alt="Dr. Naresh Chaudhary" /></div>
+          <div class="hero-photo"><img src="./Hero section dr.png" alt="Dr. Naresh Chaudhary" /></div>
         </div>
       </div>
 
     </section>
 
-    <section class="section about" id="about"><div class="container about-grid">
-      <div class="about-images reveal"><div class="image-main"><img src="1logo.PNG" alt="Samved hospital Logo" /></div></div>
-      <div class="section-copy reveal"><p class="eyebrow"><span></span> About Samved</p><h2>Care that listens.<br><em>Support</em> when you need it.</h2><p>Samved Multispeciality Hospital is located in Diyodar, Gujarat.</p><p>Our available departments include General Vibhag, Ayurvedic Panchkarma Vibhag and Garbh Sanskar.</p><div class="check-list"><span>✓ General Vibhag</span><span>✓ Ayurvedic Panchkarma Vibhag</span><span>✓ Garbh Sanskar</span></div><a class="text-link" href="#contact">Find the hospital <b>→</b></a></div>
-    </div></section>
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-images reveal">
+          <div class="image-main"><img src="1logo.PNG" alt="Samved hospital Logo" /></div>
+        </div>
+        <div class="section-copy reveal">
+          <p class="eyebrow"><span></span> About Samved</p>
+          <h2>Healing with care.<br><em>Built on trust.</em> </h2>
+          <p>Samved Multispeciality Hospital is located in Diyodar, Gujarat.</p>
+          <p>Our available departments include General Vibhag, Ayurvedic Panchkarma Vibhag and Garbh Sanskar.</p>
+          <div class="check-list"><span>✓ General Vibhag</span><span>✓ Ayurvedic Panchkarma Vibhag</span><span>✓ Garbh
+              Sanskar</span></div><a class="text-link" href="#contact">Find the hospital <b>→</b></a>
+        </div>
+      </div>
+    </section>
 
-    <section class="section departments" id="departments"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow"><span></span> Our specialties</p><h2>Expert care, across every need.</h2></div><a class="text-link" href="#appointment">View all departments <b>→</b></a></div><div class="department-grid">
-      <article class="department-card reveal"><div class="dept-title"><div class="dept-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h10M7 16h10"/><circle cx="12" cy="12" r="9"/></svg>
-</div><h3>General Vibhag</h3></div><p>Consultation and care at Samved Multispeciality Hospital.</p><a href="#appointment">Book appointment <b>→</b></a></article>
-      <article class="department-card reveal"><div class="dept-title"><div class="dept-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24"><path d="M5 19C6 11 11 6 19 5c-1 8-6 13-14 14Z"/><path d="M7 17c3-3 6-6 10-9"/></svg>
-</div><h3>Ayurvedic Panchkarma Vibhag</h3></div><p>Ayurvedic Panchkarma services at Samved Multispeciality Hospital.</p><a href="#appointment">Book appointment <b>→</b></a></article>
-      <article class="department-card reveal"><div class="dept-title"><div class="dept-icon" aria-hidden="true">
-<svg viewBox="0 0 24 24"><path d="M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.2-8 11-8 11Z"/></svg>
-</div><h3>Garbh Sanskar</h3></div><p>Garbh Sanskar services at Samved Multispeciality Hospital.</p><a href="#appointment">Book appointment <b>→</b></a></article>
-    </div></div></section>
+    <section class="section departments" id="departments">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span></span> Our specialties</p>
+            <h2>Expert care, across every need.</h2>
+          </div><a class="text-link" href="#appointment">View all departments <b>→</b></a>
+        </div>
+        <div class="department-grid">
+          <article class="department-card reveal">
+            <div class="dept-title">
+              <div class="dept-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3v18M7 8h10M7 16h10" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </div>
+              <h3>General Vibhag</h3>
+            </div>
+            <p>Consultation and care at Samved Multispeciality Hospital.</p><a href="#appointment">Book appointment
+              <b>→</b></a>
+          </article>
+          <article class="department-card reveal">
+            <div class="dept-title">
+              <div class="dept-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 19C6 11 11 6 19 5c-1 8-6 13-14 14Z" />
+                  <path d="M7 17c3-3 6-6 10-9" />
+                </svg>
+              </div>
+              <h3>Ayurvedic Panchkarma Vibhag</h3>
+            </div>
+            <p>Ayurvedic Panchkarma services at Samved Multispeciality Hospital.</p><a href="#appointment">Book
+              appointment <b>→</b></a>
+          </article>
+          <article class="department-card reveal">
+            <div class="dept-title">
+              <div class="dept-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.2-8 11-8 11Z" />
+                </svg>
+              </div>
+              <h3>Garbh Sanskar</h3>
+            </div>
+            <p>Garbh Sanskar services at Samved Multispeciality Hospital.</p><a href="#appointment">Book appointment
+              <b>→</b></a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="section doctors" id="doctors"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow"><span></span> Meet our doctors</p><h2>Dedicated care, personally delivered.</h2></div></div><div class="doctor-grid doctor-grid-two">
-      <article class="doctor-card reveal"><div class="doctor-photo"><img src="./dr-naresh-13.JPG" alt="Dr. Naresh Chaudhary" /></div><div class="doctor-info"><h3>Dr. Naresh Chaudhary</h3><p class="qualification">B.A.M.S., M.E.T.C., Fellowship G.V.-G.S</p><a class="doctor-phone" href="tel:7490064900">☎ 74900 64900</a></div></article>
-      <article class="doctor-card reveal"><div class="doctor-photo"><img src="./dr-anjali-1.jpg" alt="Dr. Anjali Chaudhary" /></div><div class="doctor-info"><h3>Dr. Anjali Chaudhary</h3><p class="qualification">B.A.M.S.-JVWU, Fellowship G.V.-G.S.</p><a class="doctor-phone" href="tel:7490064900">☎ 74900 64900</a></div></article>
-    </div></div></section>
+    <section class="section doctors" id="doctors">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span></span> Meet our doctors</p>
+            <h2>Dedicated care, personally delivered.</h2>
+          </div>
+        </div>
+        <div class="doctor-grid doctor-grid-two">
+          <article class="doctor-card reveal">
+            <div class="doctor-photo"><img src="./dr-naresh-13.JPG" alt="Dr. Naresh Chaudhary" /></div>
+            <div class="doctor-info">
+              <h3>Dr. Naresh Chaudhary</h3>
+              <p class="qualification">B.A.M.S., M.E.T.C., Fellowship G.V.-G.S</p><a class="doctor-phone"
+                href="tel:7490064900">☎ 74900 64900</a>
+            </div>
+          </article>
+          <article class="doctor-card reveal">
+            <div class="doctor-photo"><img src="./dr-anjali-1.jpg" alt="Dr. Anjali Chaudhary" /></div>
+            <div class="doctor-info">
+              <h3>Dr. Anjali Chaudhary</h3>
+              <p class="qualification">B.A.M.S.-JVWU, Fellowship G.V.-G.S.</p><a class="doctor-phone"
+                href="tel:7490064900">☎ 74900 64900</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="services"><div class="container services-grid"><div class="services-copy reveal"><p class="eyebrow light"><span></span> Samved care</p><h2>Care centred around your needs.</h2><p>Connect with Samved Multispeciality Hospital to discuss the department and appointment that is right for you.</p><a class="btn btn-light" href="#appointment">Request an appointment <b>→</b></a></div><div class="service-list reveal"><div><span>01</span><p><strong>General Vibhag</strong><small>Available at Samved Multispeciality Hospital.</small></p></div><div><span>02</span><p><strong>Ayurvedic Panchkarma Vibhag</strong><small>Available at Samved Multispeciality Hospital.</small></p></div><div><span>03</span><p><strong>Garbh Sanskar</strong><small>Available at Samved Multispeciality Hospital.</small></p></div></div></div></section>
+    <section class="services">
+      <div class="container services-grid">
+        <div class="services-copy reveal">
+          <p class="eyebrow light"><span></span> Samved care</p>
+          <h2>Care centred around your needs.</h2>
+          <p>Connect with Samved Multispeciality Hospital to discuss the department and appointment that is right for
+            you.</p><a class="btn btn-light" href="#appointment">Request an appointment <b>→</b></a>
+        </div>
+        <div class="service-list reveal">
+          <div><span>01</span>
+            <p><strong>General Vibhag</strong><small>Available at Samved Multispeciality Hospital.</small></p>
+          </div>
+          <div><span>02</span>
+            <p><strong>Ayurvedic Panchkarma Vibhag</strong><small>Available at Samved Multispeciality Hospital.</small>
+            </p>
+          </div>
+          <div><span>03</span>
+            <p><strong>Garbh Sanskar</strong><small>Available at Samved Multispeciality Hospital.</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="section why"><div class="container why-grid"><div class="why-copy reveal"><p class="eyebrow"><span></span> Samved Multispeciality Hospital</p><h2>Care for you and your family.</h2><p>Our doctors are available to help you understand your care options and book an appointment.</p><div class="why-points"><div><i>✦</i><p><strong>General Vibhag</strong></p></div><div><i>◌</i><p><strong>Ayurvedic Panchkarma Vibhag</strong></p></div><div><i>⌁</i><p><strong>Garbh Sanskar</strong></p></div></div></div><div class="why-image reveal"><img src="Samved Card.png" alt="samved" /></div></div></section>
+    <section class="section why">
+      <div class="container why-grid">
+        <div class="why-copy reveal">
+          <p class="eyebrow"><span></span> Samved Multispeciality Hospital</p>
+          <h2>Care for you and your family.</h2>
+          <p>Our doctors are available to help you understand your care options and Book Appointment.</p>
+          <div class="why-points">
+            <div><i>✦</i>
+              <p><strong>General Vibhag</strong></p>
+            </div>
+            <div><i>◌</i>
+              <p><strong>Ayurvedic Panchkarma Vibhag</strong></p>
+            </div>
+            <div><i>⌁</i>
+              <p><strong>Garbh Sanskar</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="why-image reveal"><img src="Card replace.jpeg" alt="samved" /></div>
+      </div>
+    </section>
 
-    <section class="appointment" id="appointment"><div class="container appointment-grid"><div class="appointment-copy reveal"><p class="eyebrow light"><span></span> Take the first step</p><h2>Book your appointment with Samved.</h2><p>Submit your details and the hospital team will contact you.</p><div class="appointment-contact"><span>☎</span><p><small>Emergency number</small><a href="tel:7490064900"><strong>74900 64900</strong></a></p></div></div><form class="appointment-form reveal" id="booking-form" novalidate><h3>Book an appointment</h3><div class="form-row"><label>Patient Full Name<input id="patient-name" name="patient-name" required type="text" placeholder="Your full name" /></label><label>Mobile Number<input id="patient-mobile" name="patient-mobile" required type="tel" placeholder="Your mobile number" /></label></div><div class="form-row"><label>Age<input id="patient-age" name="patient-age" type="number" min="0" placeholder="Your age" /></label><label>Gender<select id="patient-gender" name="patient-gender"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Other</option></select></label></div><div class="form-row"><label>Department<select id="patient-department" name="patient-department" required><option value="">Select department</option><option>General Vibhag</option><option>Ayurvedic Panchkarma Vibhag</option><option>Garbh Sanskar</option></select></label><label>Preferred Appointment Date<input id="appointment-date" name="appointment-date" type="date" /></label></div><div class="form-row"><label>Preferred Time<input id="appointment-time" name="appointment-time" type="time" /></label></div><label>Message / Health Concern<textarea id="health-concern" name="health-concern" placeholder="Tell us briefly about your concern"></textarea></label><button class="btn btn-primary" type="submit">Send Appointment Request on WhatsApp <b>→</b></button><p class="form-message" aria-live="polite"></p></form></div></section>
+    <section class="appointment" id="appointment">
+      <div class="container appointment-grid">
+        <div class="appointment-copy reveal">
+          <p class="eyebrow light"><span></span> Take the first step</p>
+          <h2>Book your appointment with Samved.</h2>
+          <p>Submit your details and the hospital team will contact you.</p>
+          <div class="appointment-contact"><span>☎</span>
+            <p><small>Phone number</small><a href="tel:7490064900"><strong>74900 64900</strong></a></p>
+          </div>
+        </div>
+        <form class="appointment-form reveal" id="booking-form" novalidate>
+          <h3>Book Appointment</h3>
+          <div class="form-row"><label>Patient Full Name<input id="patient-name" name="patient-name" required
+                type="text" maxlength="80" autocomplete="name" placeholder="Your full name" /></label><label>Mobile Number<input id="patient-mobile"
+                name="patient-mobile" required type="tel" inputmode="numeric" pattern="[6-9][0-9]{9}" maxlength="10" autocomplete="tel" placeholder="10-digit mobile number" /></label></div>
+          <div class="form-row"><label>Age<input id="patient-age" name="patient-age" type="number" min="0" max="120"
+                placeholder="Your age" /></label><label>Gender<select id="patient-gender" name="patient-gender">
+                <option value="">Select gender</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select></label></div>
+          <div class="form-row"><label>Department<select id="patient-department" name="patient-department" required>
+                <option value="">Select department</option>
+                <option>General Vibhag</option>
+                <option>Ayurvedic Panchkarma Vibhag</option>
+                <option>Garbh Sanskar</option>
+              </select></label><label>Preferred Appointment Date<input id="appointment-date" name="appointment-date"
+                type="date" /></label></div>
+          <div class="form-row"><label>Preferred Time<input id="appointment-time" name="appointment-time"
+                type="time" /></label></div><label>Message / Health Concern<textarea id="health-concern"
+              name="health-concern" maxlength="1000" placeholder="Tell us briefly about your concern"></textarea></label><button
+            class="btn btn-primary" type="submit">Send Appointment Request on WhatsApp <b>→</b></button>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
-    <section class="emergency"><div class="container emergency-inner reveal"><div class="emergency-icon">✚</div><div><p>Need urgent help?</p><h2>Call Samved Multispeciality Hospital.</h2></div><a href="tel:7490064900" class="emergency-number">☎ 74900 64900</a></div></section>
+    <section class="emergency">
+      <div class="container emergency-inner reveal">
+        <div class="emergency-icon">✚</div>
+        <div>
+          <p>Need urgent help?</p>
+          <h2>Call Samved Multispeciality Hospital.</h2>
+        </div><a href="tel:7490064900" class="emergency-number">☎ 74900 64900</a>
+      </div>
+    </section>
 
 
-    <section class="contact section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><p class="eyebrow"><span></span> Find us</p><h2>Visit Samved Multispeciality Hospital.</h2><p>Contact us or visit the hospital at the address below.</p><div class="contact-details"><p><i>⌖</i><span><strong>Our location</strong>Samved Multispeciality Hospital,<br>Highway Rd, near ICICI Bank,<br>Narmada Colony, Diyodar,<br>Gujarat 385330</span></p><p><i>☎</i><span><strong>Emergency number</strong><a href="tel:7490064900">74900 64900</a></span></p><p><i>✉</i><span><strong>Email</strong><a href="mailto:samvedhospital999@gmail.com">samvedhospital999@gmail.com</a></span></p></div></div><div class="map-card reveal"><div class="map-frame"><iframe title="Samved Multispeciality Hospital location" src="https://www.google.com/maps?q=Samved%20Multispeciality%20Hospital%2C%20Highway%20Rd%2C%20near%20ICICI%20Bank%2C%20Narmada%20Colony%2C%20Diyodar%2C%20Gujarat%20385330%2C%20India&output=embed" loading="lazy" allowfullscreen></iframe></div><a class="btn btn-primary map-link" href="https://www.google.com/maps/search/?api=1&query=Samved%20Multispeciality%20Hospital%2C%20Highway%20Rd%2C%20near%20ICICI%20Bank%2C%20Narmada%20Colony%2C%20Diyodar%2C%20Gujarat%20385330%2C%20India" target="_blank" rel="noopener noreferrer">View on Google Maps <b>→</b></a></div></div></section>
-    <section class="section gallery" id="gallery"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow"><span></span> A glimpse of Samved</p><h2>Photo Gallery</h2></div><p class="gallery-intro">A welcoming look at our hospital, care spaces, and community.</p></div><div class="gallery-grid">
-      <button class="gallery-item gallery-item-large reveal" type="button" data-gallery-image="Gallery/01.png" data-gallery-alt="Samved Multispeciality Hospital"><img src="Gallery/01.png" alt="Samved Multispeciality Hospital" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/02.jpg" data-gallery-alt="Hospital moments at Samved"><img src="Gallery/02.jpg" alt="Hospital moments at Samved" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/03.png" data-gallery-alt="Samved hospital facility"><img src="Gallery/03.png" alt="Samved hospital facility" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/04.png" data-gallery-alt="Care at Samved hospital"><img src="Gallery/04.png" alt="Care at Samved hospital" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/05.png" data-gallery-alt="Samved hospital team"><img src="Gallery/05.png" alt="Samved hospital team" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/06.png" data-gallery-alt="Hospital care environment"><img src="Gallery/06.png" alt="Hospital care environment" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/07.png" data-gallery-alt="Samved Multispeciality Hospital services"><img src="Gallery/07.png" alt="Samved Multispeciality Hospital services" /></button>
-      <button class="gallery-item gallery-item-wide reveal" type="button" data-gallery-image="Gallery/08.png" data-gallery-alt="A glimpse inside Samved hospital"><img src="Gallery/08.png" alt="A glimpse inside Samved hospital" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/09.png" data-gallery-alt="Samved health information"><img src="Gallery/09.png" alt="Samved health information" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/010.png" data-gallery-alt="Garbh Sanskar guidance"><img src="Gallery/010.png" alt="Garbh Sanskar guidance" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/011.png" data-gallery-alt="Panchkarma Ayurvedic Center"><img src="Gallery/011.png" alt="Panchkarma Ayurvedic Center" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/012.png" data-gallery-alt="Ayurveda logo"><img src="Gallery/012.png" alt="Ayurveda logo" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/013.jpg" data-gallery-alt="Samved Hospital and Panchkarma Center"><img src="Gallery/013.jpg" alt="Samved Hospital and Panchkarma Center" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/014.png" data-gallery-alt="Ayurvedic Panchkarma treatments"><img src="Gallery/014.png" alt="Ayurvedic Panchkarma treatments" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/015.jpg" data-gallery-alt="Garbh Sanskar benefits"><img src="Gallery/015.jpg" alt="Garbh Sanskar benefits" /></button>
-      <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/016.jpg" data-gallery-alt="Garbh Sanskar benefits"><img src="Gallery/016.jpg" alt="Garbh Sanskar benefits" /></button>
-    </div></div></section>
+    <section class="contact section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span></span> Find us</p>
+          <h2>Visit Samved Multispeciality Hospital.</h2>
+          <p>Contact us or visit the hospital at the address below.</p>
+          <div class="contact-details">
+            <p><i>⌖</i><span><strong>Our location</strong>Samved Multispeciality Hospital,<br>Highway Rd, near ICICI
+                Bank,<br>Narmada Colony, Diyodar,<br>Gujarat 385330</span></p>
+            <p><i>☎</i><span><strong>Phone number</strong><a href="tel:7490064900">74900 64900</a></span></p>
+            <p><i>✉</i><span><strong>Email</strong><a
+                  href="mailto:samvedhospital999@gmail.com">samvedhospital999@gmail.com</a></span></p>
+          </div>
+        </div>
+        <div class="map-card reveal">
+          <div class="map-frame"><iframe title="Samved Multispeciality Hospital location"
+              src="https://www.google.com/maps?q=Samved%20Multispeciality%20Hospital%2C%20Highway%20Rd%2C%20near%20ICICI%20Bank%2C%20Narmada%20Colony%2C%20Diyodar%2C%20Gujarat%20385330%2C%20India&output=embed"
+              loading="lazy" allowfullscreen></iframe></div><a class="btn btn-primary map-link"
+            href="https://www.google.com/maps/search/?api=1&query=Samved%20Multispeciality%20Hospital%2C%20Highway%20Rd%2C%20near%20ICICI%20Bank%2C%20Narmada%20Colony%2C%20Diyodar%2C%20Gujarat%20385330%2C%20India"
+            target="_blank" rel="noopener noreferrer">View on Google Maps <b>→</b></a>
+        </div>
+      </div>
+    </section>
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow"><span></span> A glimpse of Samved</p>
+            <h2>Photo Gallery</h2>
+          </div>
+          <p class="gallery-intro">A welcoming look at our hospital, care spaces, and community.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-item gallery-item-large reveal" type="button" data-gallery-image="Gallery/01.png"
+            data-gallery-alt="Samved Multispeciality Hospital"><img src="Gallery/01.png"
+              alt="Samved Multispeciality Hospital" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/02.jpg"
+            data-gallery-alt="Hospital moments at Samved"><img src="Gallery/02.jpg"
+              alt="Hospital moments at Samved" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/03.png"
+            data-gallery-alt="Samved hospital facility"><img src="Gallery/03.png"
+              alt="Samved hospital facility" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/04.png"
+            data-gallery-alt="Care at Samved hospital"><img src="Gallery/04.png"
+              alt="Care at Samved hospital" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/05.png"
+            data-gallery-alt="Samved hospital team"><img src="Gallery/05.png" alt="Samved hospital team" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/06.png"
+            data-gallery-alt="Hospital care environment"><img src="Gallery/06.png"
+              alt="Hospital care environment" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/07.png"
+            data-gallery-alt="Samved Multispeciality Hospital services"><img src="Gallery/07.png"
+              alt="Samved Multispeciality Hospital services" /></button>
+          <button class="gallery-item gallery-item-wide reveal" type="button" data-gallery-image="Gallery/08.png"
+            data-gallery-alt="A glimpse inside Samved hospital"><img src="Gallery/08.png"
+              alt="A glimpse inside Samved hospital" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/09.png"
+            data-gallery-alt="Samved health information"><img src="Gallery/09.png"
+              alt="Samved health information" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/010.png"
+            data-gallery-alt="Garbh Sanskar guidance"><img src="Gallery/010.png"
+              alt="Garbh Sanskar guidance" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/011.png"
+            data-gallery-alt="Panchkarma Ayurvedic Center"><img src="Gallery/011.png"
+              alt="Panchkarma Ayurvedic Center" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/012.png"
+            data-gallery-alt="Ayurveda logo"><img src="Gallery/012.png" alt="Ayurveda logo" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/013.jpg"
+            data-gallery-alt="Samved Hospital and Panchkarma Center"><img src="Gallery/013.jpg"
+              alt="Samved Hospital and Panchkarma Center" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/014.png"
+            data-gallery-alt="Ayurvedic Panchkarma treatments"><img src="Gallery/014.png"
+              alt="Ayurvedic Panchkarma treatments" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/015.jpg"
+            data-gallery-alt="Garbh Sanskar benefits"><img src="Gallery/015.jpg"
+              alt="Garbh Sanskar benefits" /></button>
+          <button class="gallery-item reveal" type="button" data-gallery-image="Gallery/016.jpg"
+            data-gallery-alt="Garbh Sanskar benefits"><img src="Gallery/016.jpg"
+              alt="Garbh Sanskar benefits" /></button>
+        </div>
+      </div>
+    </section>
 
     <section class="social-media-section" id="social-media">
       <div class="container social-media-inner reveal">
@@ -97,47 +466,74 @@
           <p>Stay connected for hospital updates, Ayurveda information, health awareness and useful videos.</p>
         </div>
         <div class="social-media-links">
-          <a class="social-card youtube-card" href="https://www.youtube.com/@nareshchaudhari8254" target="_blank" rel="noopener noreferrer" aria-label="Visit Samved YouTube channel">
-            <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg></span>
+          <a class="social-card youtube-card" href="https://www.youtube.com/@nareshchaudhari8254" target="_blank"
+            rel="noopener noreferrer" aria-label="Visit Samved YouTube channel">
+            <span class="social-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z" />
+              </svg></span>
             <span><strong>YouTube</strong><small>Watch Samved videos</small></span><b>→</b>
           </a>
-          <a class="social-card whatsapp-card" href="https://whatsapp.com/channel/0029Vb8UWUfLCoX910izBM26" target="_blank" rel="noopener noreferrer" aria-label="Follow Samved WhatsApp Channel">
-  <span class="social-icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 2a10 10 0 0 0-8.5 15.27L2 22l4.88-1.44A10 10 0 1 0 12 2zm0 18.2a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-2.9.85.87-2.82-.2-.31A8.2 8.2 0 1 1 12 20.2zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.04-.39-1.99-1.23-.73-.65-1.23-1.46-1.37-1.71-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.21.89 2.39 1.01 2.56.13.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.28z"/>
-    </svg>
-  </span>
-  <span><strong>WhatsApp</strong><small>Follow Samved updates</small></span><b>→</b>
-</a>
-<a class="social-card instagram-card"
-   href="https://www.instagram.com/samved_multispecialty_hospital"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Visit Samved Instagram">
+          <a class="social-card whatsapp-card" href="https://whatsapp.com/channel/0029Vb8UWUfLCoX910izBM26"
+            target="_blank" rel="noopener noreferrer" aria-label="Follow Samved WhatsApp Channel">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.5 15.27L2 22l4.88-1.44A10 10 0 1 0 12 2zm0 18.2a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-2.9.85.87-2.82-.2-.31A8.2 8.2 0 1 1 12 20.2zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.04-.39-1.99-1.23-.73-.65-1.23-1.46-1.37-1.71-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07 0 1.21.89 2.39 1.01 2.56.13.16 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.14-1.18-.06-.1-.23-.16-.48-.28z" />
+              </svg>
+            </span>
+            <span><strong>WhatsApp</strong><small>Follow Samved updates</small></span><b>→</b>
+          </a>
+          <a class="social-card instagram-card" href="https://www.instagram.com/samved_multispecialty_hospital"
+            target="_blank" rel="noopener noreferrer" aria-label="Visit Samved Instagram">
 
-  <span class="social-icon">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-3.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
-    </svg>
-  </span>
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.5-3.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z" />
+              </svg>
+            </span>
 
-  <span>
-    <strong>Instagram</strong>
-    <small>Follow Samved on Instagram</small>
-  </span>
+            <span>
+              <strong>Instagram</strong>
+              <small>Follow Samved on Instagram</small>
+            </span>
 
-  <b>→</b>
-</a>
-</a>
+            <b>→</b>
+          </a>
+          </a>
         </div>
       </div>
     </section>
   </main>
-  <footer><div class="container footer-grid"><div><a href="#home" class="footer-logo"><img src="./logo.png" alt="Samved Multispeciality Hospital" /></a><p>Samved Multispeciality Hospital</p></div><div><h4>Quick links</h4><a href="#about">About us</a><a href="#departments">Departments</a><a href="#doctors">Our doctors</a><a href="#appointment">Book appointment</a></div><div><h4>Departments</h4><a href="#departments">General Vibhag</a><a href="#departments">Ayurvedic Panchkarma Vibhag</a><a href="#departments">Garbh Sanskar</a></div><div><h4>Emergency</h4><p><a href="tel:7490064900"><strong>74900 64900</strong></a></p><p>Highway Rd, near ICICI Bank,<br>Diyodar, Gujarat 385330</p></div></div><div class="container copyright">
+  <footer>
+    <div class="container footer-grid">
+      <div><a href="#home" class="footer-logo"><img src="./logo.png" alt="Samved Multispeciality Hospital" /></a>
+        <p>Samved Multispeciality Hospital</p>
+      </div>
+      <div>
+        <h4>Quick links</h4><a href="#about">About us</a><a href="#departments">Departments</a><a href="#doctors">Our
+          doctors</a><a href="#appointment">Book appointment</a>
+      </div>
+      <div>
+        <h4>Departments</h4><a href="#departments">General Vibhag</a><a href="#departments">Ayurvedic Panchkarma
+          Vibhag</a><a href="#departments">Garbh Sanskar</a>
+      </div>
+      <div>
+        <h4>Emergency</h4>
+        <p><a href="tel:7490064900"><strong>74900 64900</strong></a></p>
+        <p>Highway Rd, near ICICI Bank,<br>Diyodar, Gujarat 385330</p>
+      </div>
+    </div>
+    <div class="container copyright">
 
-  <span>© 2026 Samved Multispeciality Hospital. All rights reserved.</span>
-</div></footer>
-  <div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery preview" aria-hidden="true"><button class="lightbox-close" type="button" aria-label="Close photo preview">&times;</button><img src="" alt="" /></div>
+      <span>© 2026 Samved Multispeciality Hospital. All rights reserved.</span>
+    </div>
+  </footer>
+  <div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery preview" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close photo preview">&times;</button><img src="" alt="" />
+  </div>
   <script src="script.js"></script>
 </body>
+
 </html>

@@ -111,13 +111,7 @@
 .whatsapp-card .social-icon svg {
   fill: #ffffff;
 }
-.instagram-card .social-icon {
-  background: #E4405F;
-}
 
-.instagram-card .social-icon svg {
-  fill: white;
-}
 .instagram-card .social-icon {
   background: linear-gradient(
     135deg,
